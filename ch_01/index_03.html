@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 한 줄 주석
+        /*
+            다중 주석
+        */
+        // 숫자형
+        let result = 0.1 + 0.2; // 0.30000000000000004
+        // 소수점 첫째자리까지
+        let result2 = (0.1 + 0.2).toFixed(1); // 0.3
+
+        console.log(result);
+        console.log(result2);
+
+    </script>
+
+    <script>
+        // null
+        let first;
+        console.log(first);
+
+        let second = 100;
+        console.log(second);
+        second = null;
+        console.log(second);
+
+    </script>
+
+    <script>
+        // 배열
+        let store = ["바지", "상의", 100, true];
+        console.log(store);
+        console.log(store[3]);
+        console.log(store[2]);
+        console.log(store[1]);
+        console.log(store[100]); // 오류 나지 않고 undefined 처리
+    </script>
+
+    <script>
+        // 객체 json과 다르게 키(key)에 쌍따옴표 없음.
+        let student = {
+            firstName : "홍아",
+            lastName : "항아",
+            age : 30, 
+            address : "부산"
+        };
+
+        // typeof : 자료형 반환
+        console.log(typeof student);
+        console.log(student.firstName);
+    </script>
+
+</body>
+
+</html>

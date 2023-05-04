@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 익명함수
+        const hi = function () {
+            return "반가워";
+        }
+        console.log(hi);
+        console.log(hi());
+        console.log("------------");
+
+        const hi2 = () => {
+            return "야 반가워"
+        }
+        console.log(hi2);
+        console.log(hi2());
+        console.log("------------");
+
+        /*
+            화살표 함수를 사용할 때 리턴 키워드 생략 여부
+            const hi2 = () => {return "야 반가워"}
+            const hi2 = () => "야 반가워";
+
+            매개변수가 있는 경우
+            let sum = (a, b) => a + b;
+
+            ! 화살표 함수를 쓸 때 return 키워드를 사용하면 반드시 {}를 붙여줘야 함.
+        */
+
+        // 매개변수가 있는 경우
+        let sum = (a, b) => a + b;
+        console.log(sum(1, 1));
+    </script>
+</body>
+
+</html>

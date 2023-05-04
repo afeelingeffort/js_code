@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading" class="m--heading" style="color: aqua;">
+            후미진 언덕 그 어디
+        </h1>
+        <div id="prodImg">
+        </div>
+    </div>
+
+    <script>
+        // getElementsByClassName
+        // HTML Collection Type으로 접근이 된다.
+        // class 선택자로 노드 접근해보기
+        // .getElement's' 는 배열로 넘어옴
+        let headingNode = document.getElementsByClassName("m--heading");
+        console.log(headingNode);
+        console.log(headingNode[0].textContent);
+        console.log(headingNode[0].style.color);
+        console.log(headingNode.color); // undefined 배열로 받아야 함.
+        console.log("--------------");
+    </script>
+
+<script>
+    // getElementsByClassName
+    // HTML Collection Type으로 접근이 된다.
+    // class 선택자로 노드 접근해보기
+    // .getElements 는 배열로 넘어옴
+    let headingNode2 = document.getElementsByTagName("h1");
+    console.log(headingNode2);
+    console.log(headingNode2[0].textContent);
+    console.log(headingNode2[0].style.color);
+    console.log(headingNode2.color); // undefined 배열로 받아야 함.
+</script>
+</body>
+</html>

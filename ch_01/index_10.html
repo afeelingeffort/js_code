@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="heading" style="color: aqua;">
+            후미진 언덕 그 어디
+        </h1>
+        <div id="prodImg">
+        </div>
+    </div>
+
+    <script>
+        // ID 선택자로 노드 접근해보기
+        // 식별자 # 쓰지 않기 !!
+        let node1 = document.getElementById("heading");
+        console.log(node1);
+        console.log(node1.textContent); // heading의 text 갖고 옴
+
+        let headingStyle = node1.style;
+        
+        console.log(headingStyle); // CSSStyleDeclaration
+        console.log(headingStyle.color); // aqua
+    </script>
+</body>
+
+</html>

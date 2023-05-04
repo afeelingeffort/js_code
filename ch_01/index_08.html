@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let
+        // let과 const는 변수를 선언하는 방법 중 하나로
+        // let을 사용하면 변수 person 선언하면
+        // 다시 재활용할 수 있다. person 새로운 객체 리터럴을 넣을 수 있다.
+        let book = {
+            title: "플러터 UI 실전",
+            author: "김쌤",
+            pages: 200,
+            price: 18000,
+            info: function () {
+                alert(this.title + "은 " + this.pages + "쪽 입니다.");
+            }
+        };
+
+        // 사용하는 모습
+        console.log(book); // 전부 출력
+        console.log(book.title);
+        console.log(book.author);
+        console.log(book.pages);
+        console.log(book.price);
+        // console.log(book.info());
+        book.info();
+
+        // const
+        // const book2 = {새로운 객체 리터럴을 담을 수 없다.}
+        const book2 = {
+            title: "플러터 UI 실전",
+            author: "김쌤",
+            pages: 200,
+            price: 18000,
+            info: function () {
+                alert(this.title + "은 " + this.pages + "쪽 입니다.");
+            }, 
+            hi: "hi"
+        };
+
+        book.title = "스프링부트 JPA";
+        console.log(book.title);
+        console.log(book.author);
+        console.log(book.pages);
+        console.log(book.price);
+        console.log(book.hi); // undefiend
+    </script>
+
+    <script>
+        // Person을 객체 리터럴로 만들기
+        // let
+        let person = {
+            name : "홍아",
+            age : 1,
+            gender : "남자",
+            info : function(){
+                alert(`${this.name}님은 ${this.age}살 ${this.gender}입니다.`);
+            }
+        };
+
+        console.log(person.name);
+        console.log(person.age);
+        console.log(person.gender);
+        person.info();
+    </script>
+</body>
+
+</html>

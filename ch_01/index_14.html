@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="">
+        <form action="/account" method="get">
+            <img src="../js/image1.png" style="width:200px; height: 200px;" alt="">
+            <br><br>
+            <button onclick="return false;" id="btn--change">이미지 변경하기</button>
+        </form>
+    </div>
+
+    <script>
+        let isImageChange = false;
+        let btnChangeNode = document.querySelector("#btn--change");
+        // .addEventListener("이벤트 유형", 함수, 캡처 여부(생략 가능));
+        btnChangeNode.addEventListener("click", changeImg, false);
+        btnChangeNode.addEventListener("mouseover", changeImg, false);
+        btnChangeNode.addEventListener("mouseout", changeImg);
+
+        function changeImg() {
+            let imgNode = document.querySelector("img");
+            // console.log(imgNode);
+            if(isImageChange){
+                imgNode.src="../js/image1.png";
+            }else {
+                imgNode.src = "../js/image2.png";
+            }
+
+            isImageChange = !isImageChange;
+        }
+    </script>
+</body>
+
+</html>

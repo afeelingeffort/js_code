@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>반복문으로 카드리스트 만들어보기</h1>
+    <button onclick="render()">render</button>
+    <div class="box" id="outerBox"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("button").on("click", render(), function () {
+                let el = document.querySelector("#outerBox").clone();
+                for(let i=0; i<10; i++){
+                    el.append(makeCard(i));
+                }
+            });
+
+            $("#outerBox").on("append", makeCard(), function(){
+                let card = document.createElement("div");
+                card.setAttribute("class", "card");
+                card.setAttribute("id", "card--" + id);
+
+                card.innerHTML=`
+                    제목 ${id}
+                    내용 ${id}
+                    <button onclick="del(${id})">삭제</button>
+                `;
+
+                return card;
+            });
+
+            $("#outerBox").on("remove", function(){
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

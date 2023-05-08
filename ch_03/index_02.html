@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <button onclick="test1()">Promise1 Test</button>
+    <button onclick="test2()">Promise2 Test</button>
+    <button onclick="test3()">Promise3 Test</button>
+    <button onclick="test4()">Promise4 Test</button>
+
+    <script>
+        function test1() {
+            console.log("test1 start");
+            setTimeout(() => { // Task Queue에 등록 - 완료 2초 뒤
+                console.log("통신 요청 start");
+                console.log("통신 완료 end");
+            }, 2000);
+
+            console.log("test1 end");
+        }
+
+        function test2() {
+            let data;
+            console.log("test2 start");
+            setTimeout(() => { // Task Queue에 담김
+                console.log("통신 완료");
+                data = 200;
+            }, 2000);
+            console.log("test2 end");
+            console.log("값 : " + data);
+        }
+
+        function test3() {
+            // resolve : 완료해서 결과 반환
+            // reject : 요청을 했으나 실패
+            let response = new Promise((resolve, reject) => {
+                setTimeout(() => { // Task Queue에 담김
+                    console.log("통신 완료");
+                    let data = 10;
+                    resolve(data);
+                }, 2000);
+            });
+
+            console.log("값 : " + response);
+            console.log("Test3 end");
+        }
+
+        async function test4() {
+            // await는 컴파일 시점에 확인된다.
+            // !! await가 있으면 메서드 앞에 'async'라는 예약어를 함수 앞에 지정해줘야 한다.
+            // 비동기 형식
+            // 밑에 거 수행 안 하고 콜백으로 바로 돌아감.
+            let response = await new Promise((resolve, reject) => {
+                setTimeout(() => { // Task Queue에 담김
+                    console.log("통신 완료");
+                    let data = 10;
+                    resolve(data);
+                }, 2000);
+            });
+
+            console.log("값 : " + response);
+            console.log("Test4 end");
+        }
+
+        
+
+
+    </script>
+</body>
+
+</html>

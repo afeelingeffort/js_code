@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        .change--span{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>To-Do List</h1>
+    <div class="render">
+        <button id="todoBtn">Todo 가져오기</button>
+    </div>
+
+    <script>
+        // https://jsonplaceholder.typicode.com/posts/1
+        $(document).ready(function () {
+            let postsId = 1;
+            $("#todoBtn").on("click", () => {
+                $.ajax({
+                    type: "get",
+                    url: "https://jsonplaceholder.typicode.com/posts/" + postsId,
+                    contentType: "application/json; charset=utf-8"
+                }).done((data, textStatus, xhr) => {
+                    let posts = xhr.responseJSON;
+                    // console.log(posts[0].title);
+                    // let title = posts[0].title;
+                    // $(".render").append(posts.title);
+
+                    let appendDiv = document.querySelector("div");
+                    // jQuery 형식으로 바꾸면 이상하게 출력됨.
+                    // document 안에 있는 div 검색하는 문장
+                    // let appendDiv = $("div");
+                    // 제이쿼리로 div 생성
+                    // let appendDiv = $("<div>");
+
+                    for (let i = 0; i < 1; i++) {
+                        // 전부 출력
+                        // appendDiv.append(render(i, posts[i].title));
+
+                        // 하나씩 출력
+                        appendDiv.append(render(i, posts.title));
+                    }
+
+                }).fail(error => {
+                    console.log("error : " + error);
+                });
+
+            });
+
+            function render(id, title) {
+                let posts = document.createElement("div");
+                posts.setAttribute("class", "render");
+                // let posts = $("div").on("createElement", () => {
+                //     posts.setAttribute("class", "render");
+                // })
+
+                let inputNode = document.createElement("input");
+                let pNode = document.createElement("span");
+                inputNode.setAttribute("type", "checkbox");
+                inputNode.setAttribute("id", "title");
+                inputNode.setAttribute("class", "check");
+                pNode.setAttribute("id", "checked");
+                
+                posts.append(inputNode);
+                pNode.append(title);
+                posts.append(pNode);
+                
+                inputNode.addEventListener("change", function(){
+                    pNode.classList.toggle("change--span");
+                });
+
+                postsId++;
+                return posts;
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

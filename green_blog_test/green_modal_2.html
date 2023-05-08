@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      #modal-content {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 300px;
+        height: 500px;
+      }
+
+      #modal--border {
+        border: 1px solid #ddd;
+        height: 360px;
+        margin-top: 10px;
+      }
+
+      #plus--btn {
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+
+      #minus--btn {
+        width: 28px;
+        border-radius: 60px;
+        background-color: red;
+        color: white;
+        border: none;
+      }
+
+      #modal--input--wrap {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <!-- Button to Open the Modal -->
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#categoryModal"
+      >
+        Open modal
+      </button>
+
+      <!-- The Modal -->
+      <div class="modal fade" id="categoryModal">
+        <div class="modal-dialog">
+          <div class="modal-content" id="modal-content">
+            <div class="modal-body">
+              <div class="">
+                <button type="button" class="plus--btn" id="plus--btn">
+                  <i class="xi-plus-min"></i>추가
+                </button>
+              </div>
+              <div class="modal--border" id="modal--border">
+                <div class="modal--input--wrap" id="modal--input--wrap">
+                  <input type="text" />
+                  <button
+                    type="button"
+                    class="minus--btn"
+                    id="minus--btn"
+                    onclick="minusBtn()"
+                  >
+                    <i class="xi-minus-min"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                취소
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-dismiss="modal"
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let plusBtnNode = document.querySelector(".plus--btn");
+      plusBtnNode.addEventListener("click", plusBtn, false);
+
+      function plusBtn() {
+        let modalborderNode = document.querySelector(".modal--border");
+        let createDiv = document.createElement("div");
+        let createInput = document.createElement("input");
+        let createButton = document.createElement("button");
+        let createI = document.createElement("i");
+
+        createDiv.setAttribute("class", "modal--input--wrap");
+        createInput.setAttribute("type", "text");
+        createButton.setAttribute("type", "button");
+        createButton.setAttribute("class", "minus--btn");
+        createButton.setAttribute("onclick", "minusBtn()");
+        createI.setAttribute("class", "xi-minus-min");
+
+        modalborderNode.append(createDiv);
+        createDiv.append(createInput);
+        createDiv.append(createButton);
+        createButton.append(createI);
+      }
+
+      function minusBtn() {
+        let minusBtnNode = document.querySelector(".minus--btn");
+
+        let modalInputWrap = minusBtnNode.closest(".modal--input--wrap");
+
+        modalInputWrap.remove();
+      }
+    </script>
+  </body>
+</html>

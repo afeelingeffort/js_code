@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      .header--wrap {
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+        background-color: blanchedalmond;
+        margin: 0 auto;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .header--title--wrap {
+        display: flex;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+        font-weight: bolder;
+      }
+
+      .main--wrap {
+        display: flex;
+        margin: 0 auto;
+        width: 1000px;
+      }
+
+      .category--wrap {
+        margin: 0 auto;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        margin-top: 20px;
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .content--wrap {
+        margin: 0 auto;
+        width: 730px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .img--content--wrap {
+        display: flex;
+        flex-direction: column;
+        width: 170px;
+      }
+
+      .category--content--wrap {
+        margin-top: 10px;
+      }
+
+      .content--head--wrap {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .instagram--youtube--icon--wrap {
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header--wrap">
+      <div class="header--title--wrap">
+        <h1>Green's Blog</h1>
+        <span class="material-symbols-outlined"> settings </span>
+      </div>
+      <div class="instagram--youtube--icon--wrap">
+        <img
+          src="/js_code/ch_01/images/instagram_icon1.png"
+          alt=""
+          style="width: 30px; height: 30px"
+        />
+        <img
+          src="/js_code/ch_01/images/youtube_icon.png"
+          alt=""
+          style="width: 50px; height: 50px"
+        />
+      </div>
+    </div>
+
+    <div class="main--wrap">
+      <div class="category--wrap">
+        <div>
+          <a href="#" style="font-weight: bolder">전체보기</a>
+          <span class="material-symbols-outlined"> settings </span>
+        </div>
+        <div class="category--content--wrap">
+          <div><a href="#">Python (12)</a></div>
+          <div><a href="#">Java (2)</a></div>
+          <div><a href="#">ios (8)</a></div>
+          <div><a href="#">소프트웨어 자료 (26)</a></div>
+          <div><a href="#">자료구조 (8)</a></div>
+          <div><a href="#">리눅스 (8)</a></div>
+          <div><a href="#">Git (4)</a></div>
+          <div><a href="#">자기계발 (3)</a></div>
+          <div><a href="#">경영전략 (20)</a></div>
+          <div><a href="#">리더쉽 (7)</a></div>
+        </div>
+      </div>
+
+      <div class="content--wrap">
+        <div class="content--head--wrap">
+          <h4>경영전략 20</h4>
+          <span class="material-symbols-outlined"> edit_square </span>
+        </div>
+        <div class="img--content--wrap">
+          <div>
+            <img
+              src="../js/image1.png"
+              alt=""
+              style="width: 200px; height: 200px"
+            />
+          </div>
+          <div style="font-size: 15.5px">
+            팬덤 확보에 성공한 4세대 걸그룹의 차별화 전략
+          </div>
+          <div style="font-size: 14px">2023.05.06</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
